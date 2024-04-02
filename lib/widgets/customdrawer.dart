@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/settings_page.dart';
 import 'customdrawertile.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -42,7 +43,7 @@ class CustomDrawer extends StatelessWidget {
             icon: Icons.settings,
             onTap: (){
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const SettingsPage));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const SettingsPage()));
             },
           ),
           const Spacer(),

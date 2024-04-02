@@ -25,8 +25,9 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             icon,
-            Text(label, style: const TextStyle(
+            Text(label, style:  TextStyle(
               fontFamily: "JosefinSans",
+              color: Theme.of(context).colorScheme.primary,
             ),),
           ],
         ),
