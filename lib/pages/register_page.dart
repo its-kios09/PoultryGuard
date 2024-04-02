@@ -70,7 +70,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 10),
               CustomButton(
-                text: "Let's Get Started",
+                text: "Create an account",
                 onTap: () {},
               ),
               const SizedBox(height: 10),

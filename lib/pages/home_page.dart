@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:poultryguard/widgets/customsilverbar.dart';
 
 import '../widgets/custombottomnavigationbar.dart';
+import '../widgets/customcurrentlocation.dart';
+import '../widgets/customdescriptionbox.dart';
 import '../widgets/customdrawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Poultry Guard", style: TextStyle(fontFamily: "JosefinSans"),)),
       drawer: const CustomDrawer(),
       bottomNavigationBar: NavigationBar(
         destinations:   [
@@ -36,6 +38,28 @@ class _HomePageState extends State<HomePage> {
 
           ),
         ],
+      ),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled)=>[
+          CustomSilverBar(
+            title: const Text("Hello"),
+            child:  Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Divider(
+                  indent: 25,
+                  endIndent: 25,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                const CustomCurrentLocation(),
+                const CustomDescriptionBox()
+              ],
+            ),
+          )
+        ],
+      body: Container(
+        color: Colors.blue,
+      ),
       ),
     );
   }
