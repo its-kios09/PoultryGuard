@@ -5,6 +5,7 @@ import '../widgets/custombottomnavigationbar.dart';
 import '../widgets/customcurrentlocation.dart';
 import '../widgets/customdescriptionbox.dart';
 import '../widgets/customdrawer.dart';
+import '../widgets/customtabbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,7 +14,20 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +40,8 @@ class _HomePageState extends State<HomePage> {
             isSelected: true, // Set to true for the initial selected item
           ),
           CustomBottomNavigationBarItem(
-            icon: Icon(Icons.medical_information_rounded,color: Theme.of(context).colorScheme.primary,),
-            label: "Consult",
+            icon: Icon(Icons.man_rounded,color: Theme.of(context).colorScheme.primary,),
+            label: "Gemini Vet",
             isSelected: false, // Set to false for non-selected items
 
           ),
@@ -42,7 +56,7 @@ class _HomePageState extends State<HomePage> {
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled)=>[
           CustomSilverBar(
-            title: const Text("Hello"),
+            title: CustomTabBar(tabController: _tabController),
             child:  Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
