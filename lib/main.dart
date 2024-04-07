@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:poultryguard/auth/login_or_register.dart';
+import 'package:poultryguard/models/poultryshopmodel.dart';
 import 'package:poultryguard/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -8,10 +9,13 @@ void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      child: const MyApp(),
-    ),
+   MultiProvider(
+       providers: [
+         ChangeNotifierProvider(create: (context) => ThemeProvider()),
+         ChangeNotifierProvider(create: (context) => Shop()),
+       ],
+     child: const MyApp(),
+   ),
   );
 }
 
