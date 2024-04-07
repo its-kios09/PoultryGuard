@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:poultryguard/models/poultrymodel.dart';
+import 'package:poultryguard/models/poultryshopmodel.dart';
 import 'package:poultryguard/widgets/custombutton.dart';
+import 'package:provider/provider.dart';
 
 class ProductPage extends StatefulWidget {
   final PoultryModal product;
@@ -20,6 +22,17 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  void addToCart(PoultryModal product, Map<Addon, bool> selectedAddons){
+
+    Navigator.pop(context);
+    List<Addon> currentlySelectedAddons = [];
+    for(Addon addon in widget.product.availableAddons){
+      if(widget.selectedAddons[addon] == true){
+        currentlySelectedAddons.add(addon);
+      }
+    }
+    context.read<Shop>().addToCart(product, currentlySelectedAddons);
+  }
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -126,7 +139,7 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                       Center(
                           child:
-                              CustomButton(onTap: () {}, text: "Add to Cart")),
+                              CustomButton(onTap: ()=> addToCart(widget.product, widget.selectedAddons), text: "Add to Cart")),
                       const SizedBox(
                         height: 20,
                       ),
