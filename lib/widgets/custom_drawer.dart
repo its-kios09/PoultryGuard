@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../pages/settings_page.dart';
-import 'customdrawertile.dart';
+import 'custom_drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});

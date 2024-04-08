@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:poultryguard/models/poultrymodel.dart';
 import 'package:poultryguard/pages/product_page.dart';
 import 'package:poultryguard/pages/routine_page.dart';
-import 'package:poultryguard/pages/settings_page.dart';
-import 'package:poultryguard/widgets/customsilverbar.dart';
+import 'package:poultryguard/widgets/custom_silver_bar.dart';
 import 'package:provider/provider.dart';
 import '../models/poultryshopmodel.dart';
-import '../widgets/custombottomnavigationbar.dart';
-import '../widgets/customcurrentlocation.dart';
-import '../widgets/customdescriptionbox.dart';
-import '../widgets/customdrawer.dart';
-import '../widgets/customtabbar.dart';
-import '../widgets/customtile.dart';
+import '../widgets/custom_bottom_navigation_bar.dart';
+import '../widgets/custom_current_location.dart';
+import '../widgets/custom_description_box.dart';
+import '../widgets/custom_drawer.dart';
+import '../widgets/custom_tab_bar.dart';
+import '../widgets/custom_tile.dart';
 import 'gemini_page.dart';
 
 class HomePage extends StatefulWidget {

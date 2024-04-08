@@ -6,10 +6,10 @@ class ProductTile extends StatelessWidget {
   final void Function()? onTap;
 
   const ProductTile({
-    Key? key,
+    super.key,
     required this.product,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

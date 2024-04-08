@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:poultryguard/widgets/customtextfield.dart';
-import '../widgets/custombutton.dart';
+import 'package:poultryguard/widgets/custom_text_field.dart';
+import '../widgets/custom_button.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {

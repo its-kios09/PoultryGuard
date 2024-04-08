@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/cart_page.dart';
+
 class CustomSilverBar extends StatelessWidget {
   final Widget child;
   final Widget title;
@@ -13,7 +15,6 @@ class CustomSilverBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-
       expandedHeight: 340,
       collapsedHeight: 120,
       floating: false,
@@ -23,12 +24,16 @@ class CustomSilverBar extends StatelessWidget {
       title: const Center(
         child: Text(
           "Poultry Guard Store",
-          style: TextStyle(
-            fontFamily: "JosefinSans"),
-          ),
+          style: TextStyle(fontFamily: "JosefinSans"),
+        ),
       ),
       actions: [
-        IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart))
+        IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const CartPage()));
+            },
+            icon: const Icon(Icons.shopping_cart))
       ],
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(

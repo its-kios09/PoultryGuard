@@ -161,8 +161,8 @@ class Shop extends ChangeNotifier{
   ];
 
   List<PoultryModal> get productMenu => _productMenu;
-
   final List<CartItem> _cart = [];
+  List<CartItem> get cart => _cart;
 
   void addToCart(PoultryModal product, List<Addon> selectedAddons){
     CartItem? cartItem = _cart.firstWhereOrNull((item){
