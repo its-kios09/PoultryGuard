@@ -44,7 +44,7 @@ class CustomCartTile extends StatelessWidget {
                             Text(
                               "\$${cartItem.product.price.toString()}",
                               style: const TextStyle(
-                                  fontFamily: "JosefinSans",
+                                fontFamily: "JosefinSans",
                               ),
                             ),
                           ],
@@ -68,29 +68,30 @@ class CustomCartTile extends StatelessWidget {
                     height: cartItem.selectedAddons.isEmpty ? 0 : 60,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                      padding: const EdgeInsets.only(
+                          left: 20, bottom: 10, right: 10),
                       children: cartItem.selectedAddons
                           .map((addon) => Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: FilterChip(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: FilterChip(
                                   label: Row(
                                     children: [
                                       Text(addon.name),
                                       Text(
-                                        "   (\$ ${addon.price.toString()})",
+                                        "   (Ksh ${addon.price.toString()})",
                                         style: TextStyle(
-                                            fontFamily: "JosefinSans",
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .inversePrimary),
+                                          fontFamily: "JosefinSans",
+                                          color: Theme.of(context).colorScheme.inversePrimary,
+                                        ),
                                       ),
+
                                     ],
                                   ),
                                   shape: StadiumBorder(
-                                    side: BorderSide(
-                                      color: Theme.of(context).colorScheme.inversePrimary
-                                    )
-                                  ),
+                                      side: BorderSide(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .inversePrimary)),
                                   onSelected: (value) {},
                                   backgroundColor:
                                       Theme.of(context).colorScheme.secondary,
@@ -101,7 +102,7 @@ class CustomCartTile extends StatelessWidget {
                                       fontSize: 12,
                                       fontFamily: "JosefinSans"),
                                 ),
-                          ))
+                              ))
                           .toList(),
                     ),
                   )

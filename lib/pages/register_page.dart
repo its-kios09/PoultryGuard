@@ -14,7 +14,8 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(
-                  image: AssetImage("assets/images/logo/app_logo.png")
-              ),
+              const Image(image: AssetImage("assets/images/logo/app_logo.png")),
               const SizedBox(height: 25),
               Text(
                 "Let's make you an account",
@@ -36,7 +35,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   fontFamily: "JosefinSans",
                   fontSize: 23,
                   fontWeight: FontWeight.bold,
-
                 ),
               ),
               Text(
@@ -47,7 +45,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   fontSize: 13,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
-
                 ),
               ),
               const SizedBox(height: 25),

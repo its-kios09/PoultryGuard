@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:poultryguard/models/poultrymodel.dart';
 
@@ -30,22 +32,25 @@ class ProductTile extends StatelessWidget {
                         product.name,
                         style: const TextStyle(
                           fontFamily: "JosefinSans",
-                        ),
-                      ),
-                      Text("\$${product.price}",
-                        style: TextStyle(
-                          fontFamily: "JosefinSans",
-                          color: Theme.of(context).colorScheme.primary
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(height: 10,),
                       Text(
-                        product.description,
-                        style:  TextStyle(
+                        "ksh ${product.price}",
+                        style: TextStyle(
                             fontFamily: "JosefinSans",
-                            color: Theme.of(context).colorScheme.inversePrimary
-
-                        ),
+                            color: Theme.of(context).colorScheme.primary),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        product.description,
+                        style: TextStyle(
+                            fontFamily: "JosefinSans",
+                            color:
+                                Theme.of(context).colorScheme.inversePrimary),
                         textAlign: TextAlign.justify,
                       ),
                     ],
@@ -53,9 +58,8 @@ class ProductTile extends StatelessWidget {
                 ),
                 const SizedBox(width: 15),
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                    child: Image.asset(product.imagePath, height: 120)
-                ),
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(product.imagePath, height: 120)),
               ],
             ),
           ),

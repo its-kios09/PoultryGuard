@@ -13,16 +13,17 @@ class CustomButton extends StatelessWidget {
         width: 220,
         padding: const EdgeInsets.all(18),
         margin: const EdgeInsets.symmetric(horizontal: 25),
-        decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            borderRadius: BorderRadius.circular(8)),
         child: Center(
           child: Text(
             text,
-            style:  TextStyle(
+            style: TextStyle(
                 fontFamily: "JosefinSans",
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.secondary,
-                fontSize: 16
-            ),
+                fontSize: 16),
           ),
         ),
       ),

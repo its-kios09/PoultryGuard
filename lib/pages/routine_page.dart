@@ -10,12 +10,14 @@ class RoutinePage extends StatefulWidget {
 class _RoutinePageState extends State<RoutinePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-        title: const Text("Routine Page", style: TextStyle(fontFamily: "JosefinSans"),
-    ),
-    backgroundColor: Theme.of(context).colorScheme.background,
-
-    ),);
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Routine Page",
+          style: TextStyle(fontFamily: "JosefinSans"),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.background,
+      ),
+    );
   }
 }

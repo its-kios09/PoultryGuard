@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:poultryguard/models/poultryshopmodel.dart';
+import 'package:poultryguard/pages/payment_page.dart';
 import 'package:poultryguard/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
@@ -84,7 +85,7 @@ class CartPage extends StatelessWidget {
                 ],
               ),
             ),
-            CustomButton(onTap: (){}, text: "Checkout"),
+            CustomButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentPage())), text: "Checkout"),
             const SizedBox(height: 25,)
           ],
         ),

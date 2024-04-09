@@ -21,12 +21,16 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(fontFamily:"JosefinSans",color: Theme.of(context).colorScheme.inversePrimary),
+          hintStyle: TextStyle(
+              fontFamily: "JosefinSans",
+              color: Theme.of(context).colorScheme.inversePrimary),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Theme.of(context).colorScheme.inversePrimary),
+            borderSide:
+                BorderSide(color: Theme.of(context).colorScheme.inversePrimary),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
+            borderSide:
+                BorderSide(color: Theme.of(context).colorScheme.primary),
           ),
         ),
       ),

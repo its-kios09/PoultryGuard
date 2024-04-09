@@ -30,8 +30,8 @@ class CustomSilverBar extends StatelessWidget {
       actions: [
         IconButton(
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const CartPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const CartPage()));
             },
             icon: const Icon(Icons.shopping_cart))
       ],

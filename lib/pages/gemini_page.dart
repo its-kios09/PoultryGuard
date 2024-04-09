@@ -12,10 +12,12 @@ class _GeminiPageState extends State<GeminiPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Gemini Page", style: TextStyle(fontFamily: "JosefinSans"),
+        title: const Text(
+          "Gemini Page",
+          style: TextStyle(fontFamily: "JosefinSans"),
         ),
         backgroundColor: Theme.of(context).colorScheme.background,
-
-      ),);
+      ),
+    );
   }
 }

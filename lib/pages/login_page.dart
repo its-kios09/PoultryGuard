@@ -15,11 +15,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  void login(){
-  //   Authentication - Firebase
+  void login() {
+    //   Authentication - Firebase
 
-  //   Navigate to Home page
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()));
+    //   Navigate to Home page
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const HomePage()));
   }
 
   @override
@@ -31,9 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(
-                  image: AssetImage("assets/images/logo/app_logo.png")
-              ),
+              const Image(image: AssetImage("assets/images/logo/app_logo.png")),
               const SizedBox(height: 25),
               Text(
                 "Welcome to Poultry Guard",
@@ -42,7 +41,6 @@ class _LoginPageState extends State<LoginPage> {
                   fontFamily: "JosefinSans",
                   fontSize: 23,
                   fontWeight: FontWeight.bold,
-
                 ),
               ),
               Text(
@@ -53,7 +51,6 @@ class _LoginPageState extends State<LoginPage> {
                   fontSize: 13,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
-
                 ),
               ),
               const SizedBox(height: 25),

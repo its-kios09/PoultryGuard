@@ -5,11 +5,10 @@ class CustomDescriptionBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Theme.of(context).colorScheme.secondary),
-        borderRadius: BorderRadius.circular(8.0)
-      ),
+          border: Border.all(color: Theme.of(context).colorScheme.secondary),
+          borderRadius: BorderRadius.circular(8.0)),
       padding: const EdgeInsets.all(25.0),
       margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
       child: const Row(
@@ -17,29 +16,36 @@ class CustomDescriptionBox extends StatelessWidget {
         children: [
           Column(
             children: [
-              Text("\$0.99",
+              Text(
+                "\$0.99",
                 style: TextStyle(
-                    fontFamily: "JosefinSans",
-                ),),
-              Text("Delivery fee",
+                  fontFamily: "JosefinSans",
+                ),
+              ),
+              Text(
+                "Delivery fee",
                 style: TextStyle(
-                    fontFamily: "JosefinSans",
-                ),),
+                  fontFamily: "JosefinSans",
+                ),
+              ),
             ],
           ),
           Column(
             children: [
-              Text("15 - 30 mins",
+              Text(
+                "15 - 30 mins",
                 style: TextStyle(
-                    fontFamily: "JosefinSans",
-                ),),
-              Text("Delivery time",
+                  fontFamily: "JosefinSans",
+                ),
+              ),
+              Text(
+                "Delivery time",
                 style: TextStyle(
-                    fontFamily: "JosefinSans",
-                ),),
+                  fontFamily: "JosefinSans",
+                ),
+              ),
             ],
           ),
-
         ],
       ),
     );

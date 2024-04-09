@@ -20,12 +20,14 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: PoultryCategory.values.length, vsync: this);
+    _tabController =
+        TabController(length: PoultryCategory.values.length, vsync: this);
   }
 
   @override
@@ -34,64 +36,81 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     super.dispose();
   }
 
-  List<PoultryModal> _filterByCategory(PoultryCategory category, List<PoultryModal> fullProduct){
-    return fullProduct.where((product) => product.category == category).toList();
+  List<PoultryModal> _filterByCategory(
+      PoultryCategory category, List<PoultryModal> fullProduct) {
+    return fullProduct
+        .where((product) => product.category == category)
+        .toList();
   }
 
-  List<Widget> getProductInThisCategory(List<PoultryModal> fullProduct){
-    return PoultryCategory.values.map((category){
-      List<PoultryModal> categoryProduct =_filterByCategory(category, fullProduct);
+  List<Widget> getProductInThisCategory(List<PoultryModal> fullProduct) {
+    return PoultryCategory.values.map((category) {
+      List<PoultryModal> categoryProduct =
+          _filterByCategory(category, fullProduct);
 
       return ListView.builder(
           itemCount: categoryProduct.length,
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,
-          itemBuilder: (context, index){
+          itemBuilder: (context, index) {
             final product = categoryProduct[index];
-          return ProductTile(
-            product: product,
-            onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => ProductPage(product: product))),
-          );
-      });
+            return ProductTile(
+              product: product,
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProductPage(product: product))),
+            );
+          });
     }).toList();
   }
-
 
   void _onTabTapped(int index) {
     switch (index) {
       case 0:
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const HomePage()));
         break;
       case 1:
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> const GeminiPage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const GeminiPage()));
         break;
       case 2:
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> const RoutinePage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const RoutinePage()));
         break;
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const CustomDrawer(),
       bottomNavigationBar: NavigationBar(
-        destinations:   [
+        destinations: [
           CustomBottomNavigationBarItem(
-            icon: Icon(Icons.store_rounded, color: Theme.of(context).colorScheme.primary,),
+            icon: Icon(
+              Icons.store_rounded,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             label: "Store",
             isSelected: true,
             onTap: () => _onTabTapped(0),
           ),
           CustomBottomNavigationBarItem(
-            icon: Icon(Icons.man_rounded,color: Theme.of(context).colorScheme.primary,),
+            icon: Icon(
+              Icons.man_rounded,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             label: "Gemini Vet",
             isSelected: false,
             onTap: () => _onTabTapped(1),
           ),
           CustomBottomNavigationBarItem(
-            icon: Icon(Icons.assignment, color: Theme.of(context).colorScheme.primary,),
+            icon: Icon(
+              Icons.assignment,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             label: "Daily Routine",
             isSelected: false,
             onTap: () => _onTabTapped(2),
@@ -99,31 +118,29 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ],
       ),
       body: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled)=>[
-          CustomSilverBar(
-            title: CustomTabBar(tabController: _tabController),
-            child:  Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Divider(
-                  indent: 25,
-                  endIndent: 25,
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
-                const CustomCurrentLocation(),
-                const CustomDescriptionBox()
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+                CustomSilverBar(
+                  title: CustomTabBar(tabController: _tabController),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Divider(
+                        indent: 25,
+                        endIndent: 25,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      const CustomCurrentLocation(),
+                      const CustomDescriptionBox()
+                    ],
+                  ),
+                )
               ],
+          body: Consumer<Shop>(
+            builder: (context, shop, child) => TabBarView(
+              controller: _tabController,
+              children: getProductInThisCategory(shop.productMenu),
             ),
-          )
-        ],
-      body: Consumer<Shop>(
-        builder: (context, shop, child) =>
-          TabBarView(
-            controller: _tabController,
-            children: getProductInThisCategory(shop.productMenu),
-          ),
-      )
-      ),
+          )),
     );
   }
 }

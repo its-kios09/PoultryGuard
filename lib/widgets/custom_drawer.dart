@@ -10,7 +10,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
-      child:  Column(
+      child: Column(
         children: [
           const SizedBox(height: 70),
           Container(
@@ -36,25 +36,28 @@ class CustomDrawer extends StatelessWidget {
           CustomDrawerTile(
             text: "Home",
             icon: Icons.home_rounded,
-            onTap: ()=> Navigator.pop(context),
+            onTap: () => Navigator.pop(context),
           ),
           CustomDrawerTile(
             text: "Settings",
             icon: Icons.settings,
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const SettingsPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsPage()));
             },
           ),
           const Spacer(),
           CustomDrawerTile(
             text: "Log out",
             icon: Icons.exit_to_app,
-            onTap: (){},
+            onTap: () {},
           ),
-          const SizedBox(height: 25,)
-
-
+          const SizedBox(
+            height: 25,
+          )
         ],
       ),
     );

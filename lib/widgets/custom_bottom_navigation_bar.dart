@@ -6,7 +6,8 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
   final bool isSelected;
   final Function()? onTap;
 
-  const CustomBottomNavigationBarItem({super.key,
+  const CustomBottomNavigationBarItem({
+    super.key,
     required this.icon,
     required this.label,
     required this.isSelected,
@@ -29,10 +30,13 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               icon,
-              Text(label, style:  TextStyle(
-                fontFamily: "JosefinSans",
-                color: Theme.of(context).colorScheme.primary,
-              ),),
+              Text(
+                label,
+                style: TextStyle(
+                  fontFamily: "JosefinSans",
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
             ],
           ),
         ),
