@@ -18,7 +18,13 @@ class CustomCartTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8)),
               margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
               child: Column(
+
                 children: [
+                  const SizedBox(height: 10,),
+                  Text(
+                    cartItem.product.name,
+                    style: const TextStyle(fontFamily: "JosefinSans"),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
@@ -31,23 +37,12 @@ class CustomCartTile extends StatelessWidget {
                               width: 120,
                               height: 120,
                             )),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              cartItem.product.name,
-                              style: const TextStyle(fontFamily: "JosefinSans"),
-                            ),
-                            Text(
-                              "\$${cartItem.product.price.toString()}",
-                              style: const TextStyle(
-                                fontFamily: "JosefinSans",
-                              ),
-                            ),
-                          ],
+                        const SizedBox(width: 20,),
+                        Text(
+                          "USD ${cartItem.product.price.toString()}",
+                          style: const TextStyle(
+                            fontFamily: "JosefinSans",
+                          ),
                         ),
                         const Spacer(),
                         CustomQuantitySelector(
@@ -78,7 +73,7 @@ class CustomCartTile extends StatelessWidget {
                                     children: [
                                       Text(addon.name),
                                       Text(
-                                        "   (Ksh ${addon.price.toString()})",
+                                        "   (USD ${addon.price.toString()})",
                                         style: TextStyle(
                                           fontFamily: "JosefinSans",
                                           color: Theme.of(context).colorScheme.inversePrimary,
@@ -105,7 +100,17 @@ class CustomCartTile extends StatelessWidget {
                               ))
                           .toList(),
                     ),
-                  )
+                  ),
+                  Text(
+                    "Total USD ${cartItem.totalPrice.toString()}",
+                    style: TextStyle(
+                      fontFamily: "JosefinSans",
+                      fontSize: 14,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .inversePrimary,
+                    ),
+                  ),
                 ],
               ),
             ));

@@ -7,11 +7,17 @@ import 'package:provider/provider.dart';
 
 import '../widgets/custom_cart_tile.dart';
 
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+class CartPage extends StatefulWidget {
+  const CartPage({Key? key}) : super(key: key);
 
   @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  @override
   Widget build(BuildContext context) {
+
     return Consumer<Shop>(builder: (context, shop, child) {
       final userCart = shop.cart;
 
@@ -66,13 +72,14 @@ class CartPage extends StatelessWidget {
                 children: [
                   userCart.isEmpty
                       ? const Expanded(
-                        child: Center(
-                          child: Text(
+                          child: Center(
+                            child: Text(
                               "The Cart is empty...",
-                              style: TextStyle(fontFamily: "JosefinSans", fontSize: 16),
+                              style: TextStyle(
+                                  fontFamily: "JosefinSans", fontSize: 16),
                             ),
-                        ),
-                      )
+                          ),
+                        )
                       : Expanded(
                           child: ListView.builder(
                               itemCount: userCart.length,
@@ -85,8 +92,10 @@ class CartPage extends StatelessWidget {
                 ],
               ),
             ),
-            CustomButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentPage())), text: "Checkout"),
-            const SizedBox(height: 25,)
+            CustomButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const PaymentPage())), text: "Checkout"),
+            const SizedBox(
+              height: 25,
+            )
           ],
         ),
       );

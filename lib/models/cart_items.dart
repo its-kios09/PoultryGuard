@@ -10,7 +10,7 @@ class CartItem {
 
   double get totalPrice {
     double addonsPrice =
-        selectedAddons.fold(0, (sum, addon) => sum + addon.price);
+    selectedAddons.fold(0, (sum, addon) => sum + addon.price);
     return (product.price + addonsPrice) * quantity;
   }
 }

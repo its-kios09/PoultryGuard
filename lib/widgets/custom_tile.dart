@@ -37,7 +37,7 @@ class ProductTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 10,),
                       Text(
-                        "ksh ${product.price}",
+                        "USD ${product.price}",
                         style: TextStyle(
                             fontFamily: "JosefinSans",
                             color: Theme.of(context).colorScheme.primary),

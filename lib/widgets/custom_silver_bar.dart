@@ -5,11 +5,13 @@ import '../pages/cart_page.dart';
 class CustomSilverBar extends StatelessWidget {
   final Widget child;
   final Widget title;
+  final int itemCount; // Add itemCount parameter
 
   const CustomSilverBar({
     super.key,
     required this.child,
     required this.title,
+    required this.itemCount, // Initialize itemCount parameter
   });
 
   @override
@@ -28,12 +30,31 @@ class CustomSilverBar extends StatelessWidget {
         ),
       ),
       actions: [
-        IconButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CartPage()));
-            },
-            icon: const Icon(Icons.shopping_cart))
+        Stack(
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CartPage()));
+              },
+              icon: const Icon(Icons.shopping_cart),
+            ),
+            Positioned(
+              right: 0,
+              child: itemCount > 0
+                  ? CircleAvatar(
+                radius: 10,
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                child: Text(
+                  itemCount.toString(),
+                  style: TextStyle(fontSize: 12),
+                ),
+              )
+                  : Container(),
+            ),
+          ],
+        ),
       ],
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(

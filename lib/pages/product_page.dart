@@ -54,7 +54,7 @@ class _ProductPageState extends State<ProductPage> {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "ksh ${widget.product.price.toString()}",
+                        "USD ${widget.product.price.toString()}",
                         style: TextStyle(
                             fontFamily: "JosefinSans",
                             fontSize: 16,
@@ -118,7 +118,7 @@ class _ProductPageState extends State<ProductPage> {
                                     ),
                                   ),
                                   subtitle: Text(
-                                    "Ksh ${addon.price}",
+                                    "USD ${addon.price}",
                                     style: TextStyle(
                                         fontFamily: "JosefinSans",
                                         color: Theme.of(context)

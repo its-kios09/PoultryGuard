@@ -11,7 +11,7 @@ class Shop extends ChangeNotifier {
         "Growel Amino Power Feed Premix – A Blend of 46 Amino Acids, Vitamins, and Minerals for Growth and Immunity of Aqua, Poultry, Cattle, Horse, Pig, Goat and Sheep – 1 kg",
         imagePath: "assets/images/products/supplements/supplement1.png",
         price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        availableAddons: [Addon(name: "Syringe", price: 5)],
         category: PoultryCategory.Feeds),
     PoultryModal(
         name: "Growel Grow-Cal D3",
@@ -19,111 +19,111 @@ class Shop extends ChangeNotifier {
         "Growel Grow-Cal D3 - Feed Premix : A Powerful Calcium Feed Premix with Vitamins, Zinc, and Magnesium for Poultry, Cattle, Horse, Pig, Goats and Sheep - 1 kg.",
         imagePath: "assets/images/products/supplements/supplement2.png",
         price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        availableAddons: [Addon(name: "Syringe", price: 5)],
         category: PoultryCategory.Feeds),
     PoultryModal(
         name: "Growel Grow B-Plex",
         description:
         "Feed Premix with 19 Vitamins, Amino Acids and Minerals for Aquaculture, Poultry, Cattle, Horses, Pigs, Goats and Sheep – 1 kg.",
         imagePath: "assets/images/products/supplements/supplement3.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 40,
+        availableAddons: [Addon(name: "Syringe", price: 5)],
         category: PoultryCategory.Feeds),
     PoultryModal(
         name: "Glucovita C",
         description:
         "Glucovita C is an effective combination of vitamin C and dextrose indicated to combat deficiency and provide an energy boost for poultry (day-old chicks, growing birds).",
         imagePath: "assets/images/products/supplements/supplement4.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 32,
+        availableAddons: [Addon(name: "Syringe", price: 5)],
         category: PoultryCategory.Feeds),
     PoultryModal(
         name: "Growel Chelated Growmin Forte",
         description:
         "Growel Chelated Growmin Forte- Feed Premix: Powerful Chelated Minerals Mixture for Aquacultures, Poultry, Cattle, Horse, Pig, Goats and Sheep - 1 kg.",
         imagePath: "assets/images/products/supplements/supplement5.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 10,
+        availableAddons: [Addon(name: "Sprayer", price: 5)],
         category: PoultryCategory.Feeds),
     PoultryModal(
         name: "Chicken plucking fingers",
         description:
         "Chicken plucking fingers are made of high-grade natural rubber for durability and flexibility. This design provides an excellent way to pluck feathers without damaging the bird's skin. NOTE: Keep out of direct sunlight and cold conditions to prolong the rubber's lifespan.",
         imagePath: "assets/images/products/equipments/equipment1.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 15,
+        availableAddons: [Addon(name: "Sprayer", price: 5)],
         category: PoultryCategory.Equipments),
     PoultryModal(
         name: "Boiler Cage",
         description:
         "Boiler production will increase to 98% rearing in Best Boiler cage. it gives a clean way for cleaning the cages",
         imagePath: "assets/images/products/equipments/equipment2.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 50,
+        availableAddons: [Addon(name: "Sprayer", price: 5)],
         category: PoultryCategory.Equipments),
     PoultryModal(
         name: "Layers Cage",
         description:
         "Egg production will increase to 98% rearing in Best Layer cage. After the egg laying grow",
         imagePath: "assets/images/products/equipments/equipment3.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 60,
+        availableAddons: [Addon(name: "Sprayer", price: 5)],
         category: PoultryCategory.Equipments),
     PoultryModal(
         name: "Top-quality 4-Litres Drinker",
         description:
         "This high-quality 4-Liters Drinker is meticulously designed to cater to the dietary needs of a wide range of poultry, including Chicken, Duck, Goose, Quail, Pigeon, and other similar birds. Can be used for Chicks as well as adult poultry.",
         imagePath: "assets/images/products/equipments/equipment4.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 34,
+        availableAddons: [Addon(name: "Spark-H Refit", price: 9)],
         category: PoultryCategory.Equipments),
     PoultryModal(
         name: "Square Drip Cups",
         description:
         "The cup prevents the dripping of water into litter or on the body of the birds. They can be used for broilers, layers, and breeders.",
         imagePath: "assets/images/products/equipments/equipment5.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 16,
+        availableAddons: [Addon(name: "Spark-H Refit", price: 9)],
         category: PoultryCategory.Equipments),
     PoultryModal(
         name: "Growel Gout Suraksha",
         description:
         "Growel Gout Suraksha – Gout Supplements for Poultry, Pet Birds and Pigeons – 1 gm",
         imagePath: "assets/images/products/medication/vaccine1.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 40,
+        availableAddons: [Addon(name: "Spark-H Refit", price: 9)],
         category: PoultryCategory.Vaccines),
     PoultryModal(
         name: "Growel Growlive Forte",
         description:
         "Growel Growlive Forte –Liver Tonic for Digestion, Appetite, Better FCR, Growth and Feed Intake of Aqua, Poultry, Cattle, Horse, Pig, Goats, Pigeons and Birds - 250 ml",
         imagePath: "assets/images/products/medication/vaccine2.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 45,
+        availableAddons: [Addon(name: "Layer Mash", price: 10)],
         category: PoultryCategory.Vaccines),
     PoultryModal(
         name: "Enrofloxacin Oral Solution",
         description:
         "Enrofloxacin Oral Solution - used in the treatment of bacterial infections. It is also used in infections of urinary tract, tonsils, sinus, nose, throat, female genital organ, skin & soft tissues and lungs (pneumonia)",
         imagePath: "assets/images/products/medication/vaccine3.jpg",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 30,
+        availableAddons: [Addon(name: "Layer Mash", price: 7)],
         category: PoultryCategory.Vaccines),
     PoultryModal(
         name: "Growel Viraclean",
         description:
         "A powerful disinfectant for Aquaculture, Poultry, Cattle, Horses, Pigs, Goats, Sheep,Pigeons and Birds 200g",
         imagePath: "assets/images/products/medication/vaccine4.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 25,
+        availableAddons: [Addon(name: "Syringe", price: 5)],
         category: PoultryCategory.Vaccines),
     PoultryModal(
         name: "Growel Grow B-Plex",
         description:
         "Growel Grow B-Plex - Vitamin Supplements with 19 Vitamins, Amino Acids and Minerals for Aqua, Poultry, Cattle, Horses, Pigs, Goats, Sheep, Pigeons and Birds - 250 ml.",
         imagePath: "assets/images/products/medication/vaccine5.png",
-        price: 1,
-        availableAddons: [Addon(name: "Strip Cups", price: 0.99)],
+        price: 32,
+        availableAddons: [Addon(name: "Syringe", price: 5)],
         category: PoultryCategory.Vaccines),
   ];
 
@@ -168,6 +168,7 @@ class Shop extends ChangeNotifier {
       }
       total += itemTotal * cartItem.quantity;
     }
+    print("Total Item Count:-$total");
     return total;
   }
 
@@ -176,6 +177,7 @@ class Shop extends ChangeNotifier {
     for (CartItem cartItem in _cart) {
       totalItemCount += cartItem.quantity;
     }
+    print("Total Item Count:-$totalItemCount");
     return totalItemCount;
   }
 

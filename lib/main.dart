@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:poultryguard/auth/login_or_register.dart';
 import 'package:poultryguard/models/poultryshopmodel.dart';
 import 'package:poultryguard/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async{
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await dotenv.load(fileName: ".env");
+  final apiKey = dotenv.env["GEMINI_KEY_API"]!;
+  Gemini.init(apiKey: apiKey);
+  Stripe.publishableKey = dotenv.env["STRIPE_PUBLISH_KEY"]!;
   runApp(
    MultiProvider(
        providers: [
