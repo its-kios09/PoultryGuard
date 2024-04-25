@@ -11,6 +11,7 @@ import 'package:http/http.dart' as http;
 
 import '../models/cart_items.dart';
 import '../models/poultryshopmodel.dart';
+import 'DeliveryProgressPage.dart';
 
 
 class PaymentPage extends StatefulWidget {
@@ -114,6 +115,17 @@ class _PaymentPageState extends State<PaymentPage> {
               )
           );
           displayPaymentSheet();
+          // Delay navigation to DeliveryProgressPage after payment sheet is initialized
+          await Future.delayed(const Duration(seconds: 18)); // Adjust delay time as needed
+
+          // Navigate to DeliveryProgressPage
+          Navigator.pop(context);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const DeliveryProgressPage()));
+
+          // Delay clearing the cart after navigating to DeliveryProgressPage
+          await Future.delayed(const Duration(minutes: 5)); // Adjust delay time as needed
+
+          // Clear cart
           Provider.of<Shop>(context, listen: false).clearCart();
         }
 

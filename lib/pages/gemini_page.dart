@@ -19,7 +19,7 @@ class _GeminiPageState extends State<GeminiPage> {
   ChatUser geminiUser = ChatUser(
     id: "1",
     firstName: "Gemini Vet",
-    profileImage: "assets/images/logo/app_logo.png", // Provide the asset path
+    profileImage: "assets/images/logo/app_logo.png",
   );
 
   @override
