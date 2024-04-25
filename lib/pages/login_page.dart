@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poultryguard/widgets/custom_text_field.dart';
+import '../services/auth/auth_service.dart';
 import '../widgets/custom_button.dart';
 import 'home_page.dart';
 
@@ -15,12 +16,19 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  void login() {
-    //   Authentication - Firebase
-
-    //   Navigate to Home page
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+  void login() async{
+    final _authService = AuthService();
+      try{
+        await _authService.signInWithEmailPassword(emailController.text, passwordController.text);
+      }
+      catch(e){
+        showDialog(context: context, builder: (context) => const AlertDialog(
+          title: Text("invalid email or password",
+            style: TextStyle(
+              fontFamily: "JosefinSans",
+            ),),
+        ));
+      }
   }
 
   @override

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "930535450860",
+    "project_id": "poultry-guard",
+    "storage_bucket": "poultry-guard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930535450860:android:a9565b17b2c802e37d9dc9",
+        "android_client_info": {
+          "package_name": "com.example.poultryguard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQpyUgGYC4Zo_gGhDTv_gyIEowZUB7G4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

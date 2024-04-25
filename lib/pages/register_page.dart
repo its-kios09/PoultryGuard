@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poultryguard/services/auth/auth_service.dart';
 
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
@@ -16,6 +17,30 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
+
+  void register() async{
+    final _authService = AuthService();
+    if (passwordController.text == confirmPasswordController.text){
+      try{
+        await _authService.signUpWithEmailPassword(emailController.text, passwordController.text);
+      }
+      catch(e){
+        showDialog(context: context, builder: (context) => AlertDialog(
+          title: Text("invalid email or password",
+            style: const TextStyle(
+          fontFamily: "JosefinSans",
+        ),),
+        ));
+      }
+    }else{
+      showDialog(context: context, builder: (context) => const AlertDialog(
+        title: Text("Password don't match",
+          style: TextStyle(
+            fontFamily: "JosefinSans",
+          ),),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,14 +86,14 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 10),
               CustomTextField(
-                controller: passwordController,
+                controller: confirmPasswordController,
                 hintText: "Confirm Password",
                 obscureText: true,
               ),
               const SizedBox(height: 10),
               CustomButton(
                 text: "Create an account",
-                onTap: () {},
+                onTap: register,
               ),
               const SizedBox(height: 10),
               Row(
