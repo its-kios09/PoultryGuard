@@ -20,8 +20,6 @@ PoultryGuard is an innovative solution aimed at revolutionizing poultry farming 
 3. **Medicine Delivery:**
    - PoultryGuard facilitates the delivery of medicines to farmers' doorsteps, eliminating the hassle of sourcing medications from distant suppliers. This ensures timely treatment and enhances the overall efficiency of poultry farming operations.
 
-4. **Worklist for Daily Routine:**
-   - The app includes a comprehensive worklist feature, aiding farmers in managing their daily routines at the poultry farm effectively. From feeding schedules to cleaning tasks, PoultryGuard helps streamline farm operations, promoting productivity and organization.
 
 ### Technologies Used:
 
